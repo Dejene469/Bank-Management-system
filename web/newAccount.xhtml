@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        
+    </h:head>
+    <h:body style="background-color:greenyellow">
+        CREATE NEW ACCOUNT
+         <br></br>
+          <br></br>
+           <br></br>
+        <h:form>
+            <h:outputLabel value="Account number"/>
+            <h:inputText id="AccountNumber"/><br></br>
+            <br></br>
+            <h:outputLabel value="AccountPin"/>
+            <h:inputSecret id="AccountPin"/><br></br>
+            <br></br>
+             <h:outputLabel value="Account Type"/>
+              <h:selectOneMenu value="userData">
+   <f:selectItem itemValue="1" itemLabel="Item 1" />
+   <f:selectItem itemValue="2" itemLabel="Item 2" />                   
+              </h:selectOneMenu><br></br>
+            <br></br>
+            <h:outputLabel value="Gender"/>
+            <h:selectOneRadio value="userData.data">
+   <f:selectItem itemValue="1" itemLabel="Male" />
+   <f:selectItem itemValue="2" itemLabel="Female" />           
+</h:selectOneRadio>
+            <br></br>
+            <h:outputLabel value="Address"/>
+            <h:inputText id="Address"/><br></br>
+            <br></br>
+             <h:outputLabel value="FName"/>
+            <h:inputText id="Fname"/><br></br>
+            <br></br>
+             <h:outputLabel value="Mname"/>
+            <h:inputText id="Mname"/><br></br>
+            <br></br>
+             <h:outputLabel value="Lname"/>
+            <h:inputText id="Lname"/><br></br>
+            <br></br>
+             <h:outputLabel value="Nationality"/>
+                         <h:selectOneMenu value="userData">
+    <f:selectItem itemValue="1" itemLabel="Ethiopia" />
+   <f:selectItem itemValue="2" itemLabel="India" />  
+    <f:selectItem itemValue="2" itemLabel="Canada" />   
+     <f:selectItem itemValue="2" itemLabel="America" />   
+      <f:selectItem itemValue="2" itemLabel="China" />   
+       <f:selectItem itemValue="2" itemLabel="Kongo" />                     
+                         </h:selectOneMenu><br></br>
+            <br></br>
+             <h:outputLabel value="Mobile"/>
+            <h:inputText id="Mobile"/><br></br>
+            <br></br>
+            <h:commandButton class="btn" value="Create" action="Login"/>
+         <h:commandButton class="btn" value="Back" action="index"/>
+         <h:commandButton class="btn" value="Clear"/>
+           
+            
+        </h:form>
+    </h:body>
+</html>
+
