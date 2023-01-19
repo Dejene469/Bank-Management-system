@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+      <title>Login page</title>
+        <style>
+             .css{
+        float: right;
+        }
+        </style>
+    </h:head>
+    <h:body style="background-color:yellowgreen">
+        <h1 text-align="center"> WELL COME TO BANK MANAGEMENT SYSTEM </h1>
+           <h:form>
+               <div class="css">
+                   <h:outputLabel value="Account number:" style="padding:20px"/>
+                   <h:inputText id="AccountNumber" value="#{logManagedBean.accountNumber}"/>
+                <br></br>
+                <br></br>
+                 <h:outputLabel value="AccountPin:" style="padding:35px"/>
+                 <h:inputSecret id="AccountPin" value="#{logManagedBean.accountPin}" />
+                  <br></br>
+                <br></br>
+                <h:commandButton class="btn" value="submit" action= "#{logManagedBean.profilerInsert}" /><br></br>
+                <br></br>
+            <h:commandButton class="btn" value="Login" action="log"/>      
+         <h:commandButton class="btn" value="Create Account" action="AdminPage"/>  
+       
+               </div>
+           </h:form>
+        <br></br>
+           <img class="images" src="folder/folder1/bnk.jpg" alt="alt" style="width: 800px"/>
+    </h:body>
+</html>
+

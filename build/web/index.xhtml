@@ -4,25 +4,21 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
         <title>Login page</title>
+        <style>
+             body{
+            background-image: url('folder/folder1/Bankimage.jpg')
+        }
+        </style>
+       
     </h:head>
     <h:body>
-        
         <h1 text-align="center"> WELL COME TO BANK MANAGEMENT SYSTEM </h1>
-        <h2 text-align="center">Login page</h2><br></br>
-           <h:form>
-            
-         <h:outputLabel value="Account number"/>
-                <h:inputText id="AccountNumber"/>
-                <br></br>
-                 <h:outputLabel value="AccountPin"/>
-                <h:inputSecret id="Account" value="AccountNu" />
-                  <br></br>
-                <br></br>
-            <h:commandButton class="btn" value="Login" action="Login"/> 
-         <h:commandButton class="btn" value="Create Account" action="newAccount"/>    
-        </h:form>
-        <br></br>
-           <img class="images" src="folder/folder1/Bankimage.jpg" alt="alt" style="width: 600px"/>
+       
+            <h:form>
+               <h:commandButton class="btn" value="Next" action="homepage"/>  
+           </h:form>
+       
+          
     </h:body>
 </html>
 

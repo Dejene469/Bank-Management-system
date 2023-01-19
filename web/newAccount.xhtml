@@ -4,7 +4,13 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>new account</title>
+          <style>
+             .image{
+        float: right;
+       
+        }
+        </style>
         
     </h:head>
     <h:body style="background-color:greenyellow">
@@ -13,53 +19,54 @@
           <br></br>
            <br></br>
         <h:form>
+             <div class="image">
+              <img class="images" src="folder/folder1/Bank.jpg" alt="alt" style="width: 800px"/>
+    
+         </div>
             <h:outputLabel value="Account number"/>
-            <h:inputText id="AccountNumber"/><br></br>
+            <h:inputText id="AccountNumber" value="#{accountManagedBean.accountNumber}"/><br></br>
             <br></br>
             <h:outputLabel value="AccountPin"/>
-            <h:inputSecret id="AccountPin"/><br></br>
+            <h:inputSecret id="AccountPin" value="#{accountManagedBean.accountPin}"/><br></br>
             <br></br>
-             <h:outputLabel value="Account Type"/>
-              <h:selectOneMenu value="userData">
-   <f:selectItem itemValue="1" itemLabel="Item 1" />
-   <f:selectItem itemValue="2" itemLabel="Item 2" />                   
-              </h:selectOneMenu><br></br>
+             <h:outputLabel value="Date"/>
+             <h:inputText id="Date" value="#{accountManagedBean.date}"/>
             <br></br>
             <h:outputLabel value="Gender"/>
-            <h:selectOneRadio value="userData.data">
-   <f:selectItem itemValue="1" itemLabel="Male" />
-   <f:selectItem itemValue="2" itemLabel="Female" />           
+            <h:selectOneRadio id="gender" value="#{accountManagedBean.gender}">
+   <f:selectItem itemValue="M" itemLabel="Male" />
+   <f:selectItem itemValue="F" itemLabel="Female" />           
 </h:selectOneRadio>
             <br></br>
             <h:outputLabel value="Address"/>
-            <h:inputText id="Address"/><br></br>
+            <h:inputText id="Address" value="#{accountManagedBean.address}"/><br></br>
             <br></br>
              <h:outputLabel value="FName"/>
-            <h:inputText id="Fname"/><br></br>
+             <h:inputText id="Fname" value="#{accountManagedBean.fname}"/><br></br>
             <br></br>
              <h:outputLabel value="Mname"/>
-            <h:inputText id="Mname"/><br></br>
+             <h:inputText id="Mname" value="#{accountManagedBean.mname}"/><br></br>
             <br></br>
              <h:outputLabel value="Lname"/>
-            <h:inputText id="Lname"/><br></br>
+             <h:inputText id="Lname" value="#{accountManagedBean.lname}"/><br></br>
             <br></br>
              <h:outputLabel value="Nationality"/>
-                         <h:selectOneMenu value="userData">
-    <f:selectItem itemValue="1" itemLabel="Ethiopia" />
-   <f:selectItem itemValue="2" itemLabel="India" />  
-    <f:selectItem itemValue="2" itemLabel="Canada" />   
-     <f:selectItem itemValue="2" itemLabel="America" />   
-      <f:selectItem itemValue="2" itemLabel="China" />   
-       <f:selectItem itemValue="2" itemLabel="Kongo" />                     
+             <h:selectOneMenu id="nationality" value="#{accountManagedBean.nationality}">
+    <f:selectItem itemValue="Ethiopia" itemLabel="Ethiopia" />
+   <f:selectItem itemValue="India" itemLabel="India" />  
+    <f:selectItem itemValue="Canada" itemLabel="Canada" />   
+     <f:selectItem itemValue="America" itemLabel="America" />   
+      <f:selectItem itemValue="China" itemLabel="China" />   
+       <f:selectItem itemValue="Kongo" itemLabel="Kongo" />                     
                          </h:selectOneMenu><br></br>
             <br></br>
              <h:outputLabel value="Mobile"/>
-            <h:inputText id="Mobile"/><br></br>
+             <h:inputText id="Mobile" value="#{accountManagedBean.mobile}"/><br></br>
             <br></br>
-            <h:commandButton class="btn" value="Create" action="Login"/>
-         <h:commandButton class="btn" value="Back" action="index"/>
-         <h:commandButton class="btn" value="Clear"/>
-           
+            <h:commandButton class="btn" value="Create"  style="background-color: gray" action="#{accountManagedBean.AccountInsert}"/>
+         <h:commandButton class="btn" value="Back" action="homepage"/>
+         <h:commandButton class="btn" value="Clear" style="background-color: red"/>
+        
             
         </h:form>
     </h:body>
