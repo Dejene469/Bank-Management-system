@@ -6,11 +6,11 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     
     <h:head>
-        <title>Data Table</title>
+        <title>Deposit List</title>
         <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap-theme.min.css" />
         <script src="./bootstrap/js/bootstrap.min.js"></script>
-         <style>
+        <style>
             th{
                 
                 background-color:window;
@@ -20,7 +20,6 @@
             table{
                 border-collapse: collapse;
                 width: 50%;
-                background-color: gray;
             }
             td{
                 border-style: solid;
@@ -40,70 +39,29 @@
                          list-column-right" headerClass="list-header"
                          rowClasses="list-row"
                          styleClass="list-background"
-                         value="#{customerlist.userList}"
+                         value="#{depositView.depositList}"
                          var="col1"  class="table-bordered table-hover table-striped table-condensed bg-info">   
                 <h:column>
                     <f:facet name="header">
-                      AccountNum
+                  Name
                     </f:facet>
-                    #{col1.accountNumber}
+                    #{col1.name}
                 </h:column>
 
                 <h:column>
                     <f:facet name="header" class="text-center alert-warning">
-                      AccountPin
+                    CreditAccount
                     </f:facet>
-                    #{col1.accountPin}
+                    #{col1.creditaccount}
                 </h:column>
 
                 <h:column>
                     <f:facet name="header">
-                       Date
+                     Amount
                     </f:facet>
-                    #{col1.date}
+                    #{col1.amount}
                 </h:column>
-                <h:column>
-                    <f:facet name="header">
-                   Gender
-                    </f:facet>
-                    #{col1.gender}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                      Address
-                    </f:facet>
-                    #{col1.address}
-                </h:column>
-                 <h:column>
-                    <f:facet name="header">
-                     Fname
-                    </f:facet>
-                    #{col1.fname}
-                </h:column>
-                 <h:column>
-                    <f:facet name="header">
-                    Mname
-                    </f:facet>
-                    #{col1.mname}
-                </h:column>
-                 <h:column>
-                    <f:facet name="header">
-                   Lname
-                    </f:facet>
-                    #{col1.lname}
-                </h:column>
-                 <h:column>
-                    <f:facet name="header">
-                     Nationality
-                    </f:facet>
-                    #{col1.nationality}
-                </h:column>
-                 <h:column>
-                    <f:facet name="header">
-                   Mobile
-                    </f:facet>
-                    #{col1.mobile}
-                </h:column>
+              
             </h:dataTable>
 
 
