@@ -139,4 +139,16 @@ public class AccountManagedBean {
         
      }
     
+   public static String delete(int accountNumber) throws ClassNotFoundException{
+        System.out.println("deleted " + accountNumber);
+        try {
+             DBConnection db=new DBConnection();
+            try (Connection connection = db.connMethod()) {
+                PreparedStatement stmt=connection.prepareStatement("delete from ACCOUNTTA where ACCOUNTNUMBER = " + accountNumber);
+                stmt.executeUpdate();
+            }
+        } catch(SQLException sqlException){
+        }
+        return "/adminpage.xhtml?faces-redirect=true";
+   } 
 }

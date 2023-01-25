@@ -5,6 +5,7 @@
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.enterprise.context.Dependent;
@@ -44,17 +45,26 @@ private String amount;
     public void setAmount(String amount) {
         this.amount = amount;
     }
+   
 
+    
     public void DepositInsert() throws ClassNotFoundException, SQLException {
          
             DBConnection dbcon = new DBConnection();
             Connection con = dbcon.connMethod();
+//            String sql="select * from DEPOSITTABLE where name=?";
+//               PreparedStatement ps1 = con.prepareStatement(sql);
+//                           ResultSet rs=ps1.executeQuery();
+//                           rs.next();
+//                           int num=rs.getInt(3);
+
             String sqr = "Insert into DEPOSITTABLE(NAME,CREDITACCOUNT,AMOUNT) values(?,?,?)";
+        //  String sqr="update DEPOSITTABLE set name=?,creditaccount=?,amount=? where  name=?" ; 
             PreparedStatement ps = con.prepareStatement(sqr);
             ps.setString(1,name );
             ps.setString(2, creditaccount);
              ps.setString(3, amount);
-            
+            // ps.setString(4, name);
             ps.executeUpdate();
         
      }
