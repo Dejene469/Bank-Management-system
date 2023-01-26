@@ -5,10 +5,13 @@
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.enterprise.context.Dependent;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 
 
 /**
@@ -150,5 +153,36 @@ public class AccountManagedBean {
         } catch(SQLException sqlException){
         }
         return "/adminpage.xhtml?faces-redirect=true";
-   } 
+   }
+   
+   public String validateAccount() throws SQLException, ClassNotFoundException {
+        boolean valid =  accountValidate.validate(accountNumber, accountPin);
+        if (valid) {
+              DBConnection dbcon = new DBConnection();
+            Connection con = dbcon.connMethod();
+            PreparedStatement ps = con.prepareStatement("select ACCOUNTNUMBER and ACCOUNTPIN from ACCOUNTTA where ACCOUNTNUMBER=? and ACCOUNTPIN=?");
+            ps.setString(1, accountNumber);  
+             ps.setString(2, accountPin); 
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+           
+           // String accountNumber =rs.getString(1);
+            //String accountPin =rs.getString(2);
+           
+            if ("ACCOUNTNUMBER".equals(accountNumber) && "ACCOUNTPIN".equals(accountPin)){
+                return "log";
+            } else {
+                return "index";
+            }
+        } else {
+            FacesContext.getCurrentInstance().addMessage(
+                    null,
+                    new FacesMessage(FacesMessage.SEVERITY_WARN,
+                            "Incorrect AccountNumber and AccountPin",
+                            "Please enter correct AccountNumber and AccountPin"));
+            return "profile";
+        }
+    
+}
+   
 }

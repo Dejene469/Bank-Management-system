@@ -14,18 +14,21 @@
         <h1 text-align="center"> WELL COME TO BANK MANAGEMENT SYSTEM </h1>
            <h:form>
                <div class="css">
-                   <h:outputLabel value="Account number:" style="padding:20px"/>
-                   <h:inputText id="AccountNumber" value="#{logManagedBean.accountNumber}"/>
+                   <h:outputLabel value="Account number:" style="padding:20px" />
+                   <h:inputText id="AccountNumber" value="#{logManagedBean.accountNumber}" style="background-color: #ff9800"/>
                 <br></br>
                 <br></br>
                  <h:outputLabel value="AccountPin:" style="padding:35px"/>
-                 <h:inputSecret id="AccountPin" value="#{logManagedBean.accountPin}" />
+                 <h:inputSecret id="AccountPin" value="#{logManagedBean.accountPin}" style="background-color: #ff9800" />
                   <br></br>
                 <br></br>
-                <h:commandButton class="btn" value="submit" action= "#{logManagedBean.profilerInsert}" /><br></br>
+                <h:commandButton class="btn" value="submit" action= "#{accountManagedBean.validateAccount}"  style="font-size:15px;
+  font-family:Arial;width:100px;height:30px;border-width:1px;color:#fff;border-color:#18ab29;border-top-left-radius:20px; border-top-right-radius:20px;border-bottom-left-radius:20px;border-bottom-right-radius:20px;text-shadow: 1px 1px 0px #2f6627;background:#44c767;"/><br></br>
                 <br></br>
-            <h:commandButton class="btn" value="Login" action="log"/>      
-         <h:commandButton class="btn" value="Create Account" action="AdminPage"/>  
+                <h:commandButton class="btn" value="Login" action="log" style="font-size:15px;
+  font-family:Arial;width:100px;height:30px;border-width:1px;color:#fff;border-color:#18ab29;border-top-left-radius:20px; border-top-right-radius:20px;border-bottom-left-radius:20px;border-bottom-right-radius:20px;text-shadow: 1px 1px 0px #2f6627;background:#44c767;"/>      
+            <h:commandButton class="btn" value="Create Account" action="AdminPage" style="font-size:15px;
+  font-family:Arial;width:100px;height:30px;border-width:1px;color:#fff;border-color:#18ab29;border-top-left-radius:20px; border-top-right-radius:20px;border-bottom-left-radius:20px;border-bottom-right-radius:20px;text-shadow: 1px 1px 0px #2f6627;background:#44c767;"/>  
        
                </div>
            </h:form>

@@ -13,10 +13,10 @@
     <h:body style="background-color: burlywood">
         <h:form>
             Admin Login<br></br>
-            <h:outputLabel value="Username"/>
+            <h:outputLabel value="Username" style="background-color: #e7e7e7"/>
             <h:inputText id="username" value="#{admin.username}" style="margin:20px"/><br></br>
             <br></br>
-            <h:outputLabel value="Password"/>
+            <h:outputLabel value="Password" style="background-color: #e7e7e7"/>
             <h:inputSecret id="password" value="#{admin.password}"/><br></br>
             <br></br>
             <h:commandButton class="btn" value="Submit" action="#{admin.validateUsernamePassword}" style="margin:25px;padding: 8px;background-color: green"/>
