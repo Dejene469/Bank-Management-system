@@ -48,25 +48,40 @@ private String amount;
    
 
     
-    public void DepositInsert() throws ClassNotFoundException, SQLException {
+    public void DepositInsert(String name,String deposit) throws ClassNotFoundException, SQLException {
          
             DBConnection dbcon = new DBConnection();
             Connection con = dbcon.connMethod();
-//            String sql="select * from DEPOSITTABLE where name=?";
-//               PreparedStatement ps1 = con.prepareStatement(sql);
-//                           ResultSet rs=ps1.executeQuery();
-//                           rs.next();
-//                           int num=rs.getInt(3);
-
-            String sqr = "Insert into DEPOSITTABLE(NAME,CREDITACCOUNT,AMOUNT) values(?,?,?)";
-        //  String sqr="update DEPOSITTABLE set name=?,creditaccount=?,amount=? where  name=?" ; 
-            PreparedStatement ps = con.prepareStatement(sqr);
-            ps.setString(1,name );
+            String sql="select * from DEPOSITTABLE where name=?";
+               PreparedStatement ps1 = con.prepareStatement(sql);
+               ps1.setString(1, name);
+                           ResultSet rs=ps1.executeQuery();
+                           if(rs.next()){
+                           int num=rs.getInt(3);
+                           Integer value=Integer.parseInt(deposit);
+                          value+=num;
+                          amount=value.toString();
+                        sql="update DEPOSITTABLE set NAME=?,CREDITACCOUNT=?,AMOUNT=? where name=?";  
+                  PreparedStatement ps=con.prepareStatement(sql);
+                        ps.setString(1,name );
             ps.setString(2, creditaccount);
              ps.setString(3, amount);
-            // ps.setString(4, name);
+            ps.setString(4, name);
             ps.executeUpdate();
+                           } else {
+                               String sqr = "Insert into DEPOSITTABLE(NAME,CREDITACCOUNT,AMOUNT) values(?,?,?)";
+     
+            PreparedStatement ps2 = con.prepareStatement(sqr);
+            ps2.setString(1,name );
+            ps2.setString(2, creditaccount);
+             ps2.setString(3, amount);
+            
+            ps2.executeUpdate();
+                           }
+                           
+
+           
         
      }
-     
 }
+
