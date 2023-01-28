@@ -9,18 +9,29 @@
             background-image: url('folder/folder1/Bankimage.jpg')
         }
         </style>
+ 
+              <style>
+             .image{
+        float: right;
+       
+        }
+       
+        </style>
     </h:head>
     <h:body style="background-color: burlywood">
         <h:form>
-            Admin Login<br></br>
-            <h:outputLabel value="Username" style="background-color: #e7e7e7"/>
+            <div class="image">
+               <h1>Admin Login</h1> <br></br>
+            <h:outputLabel value="Username" style="background-color: gray"/>
             <h:inputText id="username" value="#{admin.username}" style="margin:20px"/><br></br>
             <br></br>
-            <h:outputLabel value="Password" style="background-color: #e7e7e7"/>
+            <h:outputLabel value="Password" style="background-color: gray"/>
             <h:inputSecret id="password" value="#{admin.password}"/><br></br>
             <br></br>
             <h:commandButton class="btn" value="Submit" action="#{admin.validateUsernamePassword}" style="margin:25px;padding: 8px;background-color: green"/>
             
+         </div>
+           
         </h:form>
     </h:body>
 </html>
