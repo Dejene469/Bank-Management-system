@@ -5,13 +5,19 @@
         <group>
             <file>file:/C:/Users/hp/Documents/NetBeansProjects/WebApplication6/src/java/accountValidate.java</file>
             <file>file:/C:/Users/hp/Documents/NetBeansProjects/WebApplication6/src/java/AdminValidate.java</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/WebApplication6/src/java/AccountManagedBean.java</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/WebApplication6/web/log.xhtml</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/WebApplication6/web/customerlist.xhtml</file>
             <file>file:/C:/Users/hp/Documents/NetBeansProjects/WebApplication6/web/newAccount.xhtml</file>
             <file>file:/C:/Users/hp/Documents/NetBeansProjects/WebApplication6/web/AdminPage.xhtml</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/WebApplication6/src/java/admin.java</file>
-            <file>file:/C:/Users/hp/Documents/NetBeansProjects/WebApplication6/src/java/logManagedBean.java</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/WebApplication6/web/depositList.xhtml</file>
             <file>file:/C:/Users/hp/Documents/NetBeansProjects/WebApplication6/web/homepage.xhtml</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/WebApplication6/src/java/withdrawManaged.java</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/WebApplication6/src/java/AccountManagedBean.java</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/WebApplication6/web/log.xhtml</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/WebApplication6/src/java/admin.java</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/WebApplication6/web/withdrawal.xhtml</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/WebApplication6/src/java/DepositValidate.java</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/WebApplication6/src/java/logManagedBean.java</file>
+            <file>file:/C:/Users/hp/Documents/NetBeansProjects/WebApplication6/web/Deposit.xhtml</file>
         </group>
     </open-files>
 </project-private>
