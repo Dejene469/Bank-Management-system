@@ -156,33 +156,58 @@ public class AccountManagedBean {
    }
    
    public String validateAccount() throws SQLException, ClassNotFoundException {
-        boolean valid =  accountValidate.validate(accountNumber, accountPin);
+        boolean valid =  AccountValidate.validat(accountNumber, accountPin);
         if (valid) {
               DBConnection dbcon = new DBConnection();
             Connection con = dbcon.connMethod();
-            PreparedStatement ps = con.prepareStatement("select ACCOUNTNUMBER and ACCOUNTPIN from ACCOUNTTA where ACCOUNTNUMBER=? and ACCOUNTPIN=?");
-            ps.setString(1, accountNumber);  
-             ps.setString(2, accountPin); 
-            ResultSet rs = ps.executeQuery();
+            PreparedStatement ps1 = con.prepareStatement("select ACCOUNTNUMBER,ACCOUNTPIN from ACCOUNTTA where ACCOUNTNUMBER=? and ACCOUNTPIN=?");
+            ps1.setString(1, accountNumber);  
+             ps1.setString(2, accountPin); 
+            ResultSet rs = ps1.executeQuery();
             rs.next();
            
-           // String accountNumber =rs.getString(1);
-            //String accountPin =rs.getString(2);
+           String accountNu =rs.getString(1);
+            String accountP =rs.getString(2);
            
-            if ("ACCOUNTNUMBER".equals(accountNumber) && "ACCOUNTPIN".equals(accountPin)){
+            if ("222".equals(accountNu) && "333".equals(accountP)){
                 return "log";
-            } else {
+            }
+            else {
                 return "index";
             }
         } else {
             FacesContext.getCurrentInstance().addMessage(
                     null,
                     new FacesMessage(FacesMessage.SEVERITY_WARN,
-                            "Incorrect AccountNumber and AccountPin",
+                            "",
                             "Please enter correct AccountNumber and AccountPin"));
-            return "profile";
+            return "log";
         }
     
 }
+  
+    
+   
+   
+    public void Accountupdate() throws ClassNotFoundException, SQLException {
+         
+            DBConnection dbcon = new DBConnection();
+            Connection con = dbcon.connMethod();
+            String sqr = "update ACCOUNTTA set accountPin=?,day=?,gender=?,address=?,fname=?,mname=?,lname=?,nationality=?,mobile=? where accountNumber=? ";
+            PreparedStatement ps = con.prepareStatement(sqr);
+
+            ps.setString(1, accountPin);
+             ps.setString(2, date);
+              ps.setString(3, gender);
+               ps.setString(4, address);
+                ps.setString(5, fname);
+                 ps.setString(6, mname);
+                  ps.setString(7, lname);
+                   ps.setString(8, nationality);
+                    ps.setString(9, mobile);
+                        ps.setString(10, accountNumber);
+            ps.executeUpdate();
+        
+     }
    
 }

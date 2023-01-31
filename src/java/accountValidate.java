@@ -16,16 +16,16 @@ import javax.faces.bean.ManagedBean;
  */
 @ManagedBean
 @Dependent
-public class accountValidate {
+public class AccountValidate {
 
-     public static boolean validate(String accountNumber, String accountPin) {
+  public static boolean validat(String accountNumber, String accountPassword) {
         boolean status = false;
         try {
             DBConnection dbcon = new DBConnection();
             Connection con = dbcon.connMethod();
             PreparedStatement ps = con.prepareStatement("select * from ACCOUNTTA where ACCOUNTNUMBER=? and ACCOUNTPIN=?");
             ps.setString(1, accountNumber);
-            ps.setString(2, accountPin);
+            ps.setString(2, accountPassword);
             ResultSet rs = ps.executeQuery();
             status = rs.next();
 
@@ -33,5 +33,5 @@ public class accountValidate {
             System.out.println(e);
         }
         return status;
-    }
+    } 
 }

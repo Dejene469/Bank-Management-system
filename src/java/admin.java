@@ -52,10 +52,10 @@ private String username;
             //String username =rs.getString(1);
             //String password =rs.getString(1);
            
-            if ("USERNAME".equals(username) && "PASSWORD".equals(password)){
-                return "new";
-            } else {
+            if ("Dej".equals(username) && "1212".equals(password)){
                 return "newAccount";
+            } else {
+                return "new";
             }
         } else {
             FacesContext.getCurrentInstance().addMessage(

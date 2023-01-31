@@ -6,7 +6,7 @@
         <title>Facelet Title</title>
         <style>
              body{
-            background-image: url('folder/folder1/Bankimage.jpg')
+            background-image: url('folder/folder1/ad.jpg')
         }
         </style>
  
@@ -21,12 +21,12 @@
     <h:body style="background-color: burlywood">
         <h:form>
             <div class="image">
-               <h1>Admin Login</h1> <br></br>
-            <h:outputLabel value="Username" style="background-color: gray"/>
-            <h:inputText id="username" value="#{admin.username}" style="margin:20px"/><br></br>
+                <h1 style="background-color: #009999">Admin Login</h1> <br></br>
+            <h:outputLabel value="Username" style=" font-size: 20px;font-style: italic;background-color: gray"/>
+            <h:inputText id="username" required="true" value="#{admin.username}" style="margin:20px"/><br></br>
             <br></br>
-            <h:outputLabel value="Password" style="background-color: gray"/>
-            <h:inputSecret id="password" value="#{admin.password}"/><br></br>
+            <h:outputLabel value="Password" style=" font-size: 20px; font-style: italic;background-color: gray" />
+            <h:inputSecret id="password" required="true" value="#{admin.password}" style="margin:15px"/><br></br>
             <br></br>
             <h:commandButton class="btn" value="Submit" action="#{admin.validateUsernamePassword}" style="margin:25px;padding: 8px;background-color: green"/>
             
